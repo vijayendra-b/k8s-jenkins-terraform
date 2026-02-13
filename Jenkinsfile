@@ -8,12 +8,12 @@ pipeline {
 
     stages {
 
-        stage('Checkout') {
+        '''stage('Checkout') {
             steps {
                 git branch: 'main',
                     url: git 'https://github.com/vijayendra-b/k8s-jenkins-terraform.git'
             }
-        }
+        }'''
 
         stage('Terraform Init') {
             steps {
