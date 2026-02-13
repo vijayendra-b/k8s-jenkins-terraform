@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: poc13-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: poc13-app
+  template:
+    metadata:
+      labels:
+        app: poc13-app
+    spec:
+      containers:
+        - name: poc13-app
+          image: vijayendra1/poc13-app:latest
+          ports:
+            - containerPort: 5000
