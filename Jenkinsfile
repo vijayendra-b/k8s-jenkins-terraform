@@ -18,10 +18,12 @@ pipeline {
         stage('Terraform Init') {
             steps {
                 dir('terraform') {
+                    sh 'rm -rf .terraform terraform.lock.hcl'
                     sh 'terraform init'
                 }
             }
         }
+
 
         stage('Terraform Apply') {
             steps {
